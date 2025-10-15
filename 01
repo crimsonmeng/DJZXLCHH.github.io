@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>道具组招新 - ARKNIGHTS ENDFIELD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFD600',
+                        secondary: '#121212',
+                        accent: '#FF4081',
+                        light: '#F5F5F5',
+                        dark: '#212121'
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                        display: ['"Helvetica Bold"', 'Arial Bold', 'sans-serif']
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .text-stroke {
+                -webkit-text-stroke: 1px #000;
+            }
+            .rotate-slight {
+                transform: rotate(-1deg);
+            }
+            .rotate-slight-reverse {
+                transform: rotate(1deg);
+            }
+            .flowing-bg {
+                animation: flow 15s linear infinite;
+            }
+            .flowing-bg-delay-1 {
+                animation: flow 15s linear 3s infinite;
+            }
+            .flowing-bg-delay-2 {
+                animation: flow 15s linear 7s infinite;
+            }
+            .flowing-bg-delay-3 {
+                animation: flow 15s linear 11s infinite;
+            }
+            @keyframes flow {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(100vw);
+                }
+            }
+            .diagonal-line {
+                background: repeating-linear-gradient(
+                    -45deg,
+                    rgba(255, 214, 0, 0.1),
+                    rgba(255, 214, 0, 0.1) 10px,
+                    rgba(255, 214, 0, 0.2) 10px,
+                    rgba(255, 214, 0, 0.2) 20px
+                );
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 overflow-x-hidden font-sans text-dark">
+    <!-- 顶部装饰条 -->
+    <div class="h-1 w-full bg-gradient-to-r from-purple-500 via-blue-500 to-green-500"></div>
+    
+    <!-- 背景流动色块 -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <!-- 大型黄色流动块 -->
+        <div class="absolute top-0 left-0 h-full w-1/4 bg-primary/80 flowing-bg"></div>
+        <div class="absolute top-0 left-1/3 h-1/2 w-1/5 bg-primary/70 flowing-bg-delay-1"></div>
+        <div class="absolute bottom-0 right-1/4 h-2/3 w-1/6 bg-primary/60 flowing-bg-delay-2"></div>
+        <div class="absolute top-1/4 right-0 h-1/3 w-1/5 bg-primary/50 flowing-bg-delay-3"></div>
+        
+        <!-- 几何装饰元素 -->
+        <div class="absolute top-10 left-10 w-32 h-32 bg-primary/40 rotate-45"></div>
+        <div class="absolute bottom-20 left-1/4 w-40 h-10 bg-primary/60"></div>
+        <div class="absolute top-1/3 right-1/3 w-10 h-40 bg-primary/30"></div>
+        
+        <!-- 抽象线条装饰 -->
+        <div class="absolute inset-0 diagonal-line opacity-20"></div>
+        
+        <!-- 剪影人物 -->
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-cover bg-center opacity-30" style="background-image: url('https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/7faeba24c48b46b7a79c584a3fda173c.jpg~tplv-a9rns2rl98-24-95-exif:1080:1080.image?rcl=20251015233049C47C1FDB6A53D7D5FBB7&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1761147049&x-signature=9ADiY7vZbmdq3NHWdREsfZHjlm0%3D'); filter: grayscale(100%);"></div>
+    </div>
+    
+    <!-- 主要内容 -->
+    <div class="relative z-10 container mx-auto px-4 py-12">
+        <!-- 顶部标题栏 -->
+        <div class="flex justify-between items-center mb-12">
+            <div class="text-right">
+                <div class="text-gray-600 text-sm tracking-widest">// OPERATOR</div>
+                <div class="text-2xl font-bold">+</div>
+            </div>
+            <div class="h-px w-1/3 bg-gray-300"></div>
+        </div>
+        
+        <!-- 大标题 NIGHTS -->
+        <div class="text-[clamp(5rem,15vw,10rem)] font-display font-black text-gray-800 opacity-10 absolute right-0 top-1/4 transform -translate-y-1/2 leading-none">
+            NIGHTS
+        </div>
+        
+        <!-- 大标题 EDFIELD -->
+        <div class="text-[clamp(4rem,12vw,8rem)] font-display font-black text-gray-800 opacity-10 absolute right-[-10%] bottom-[-10%] transform rotate-90 leading-none">
+            EDFIELD
+        </div>
+        
+        <!-- 内容块容器 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- 左侧白色文本块 -->
+            <div class="lg:col-span-5 bg-white p-8 shadow-xl z-20 transform rotate-slight draggable-block" id="whiteBlock">
+                <div class="text-sm text-gray-500 mb-2">TACTICAL EQUIPMENT DEPARTMENT</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">道具组</h2>
+                <h1 class="text-5xl md:text-7xl font-black mb-6">招新</h1>
+                
+                <p class="mb-4">宝子们，是不是每次看到精美的COS道具就羡慕不已？是不是也想亲手打造属于自己的梦幻装备？现在，机会来啦！</p>
+                
+                <ul class="space-y-3 mb-4">
+                    <li class="flex items-start">
+                        <span class="text-primary mr-2">■</span>
+                        <span>加入我们，开启奇幻之旅！</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-primary mr-2">■</span>
+                        <span>这里是二次元爱好者的天堂！无论你是COS道具小白，还是资深爱好者，我们都热烈欢迎！只要你对COS道具有兴趣，这里就是你的专属舞台！</span>
+                    </li>
+                    <li class="font-bold">【新手友好】</li>
+                    <li class="flex items-start pl-4">
+                        <span class="text-primary mr-2">□</span>
+                        <span>零基础也能学：我们为萌新们准备了超详细的教程，从基础材料选择到复杂造型制作，一步步带你入门，让你快速上手！</span>
+                    </li>
+                    <li class="flex items-start pl-4">
+                        <span class="text-primary mr-2">□</span>
+                        <span>专业指导：组内大神齐聚，他们会毫无保留地分享经验，帮你避坑，快速成长！</span>
+                    </li>
+                    <li class="flex items-start pl-4">
+                        <span class="text-primary mr-2">□</span>
+                        <span>实践机会多：定期组织制作活动，从简单的小道具到大型装备，让你在实践中不断提升技能！</span>
+                    </li>
+                    <li class="font-bold">【创意无限】</li>
+                    <li class="flex items-start pl-4">
+                        <span class="text-primary mr-2">□</span>
+                        <span>谷子布景小道具：想让你的COS场景更加生动有趣？我们教你制作谷子布景小道具，让你的COS秒变大片！在这里诞生！</span>
+                    </li>
+                    <li class="font-bold">【欢乐交流】</li>
+                    <li class="flex items-start pl-4">
+                        <span class="text-primary mr-2">□</span>
+                        <span>每月交流会：每一次的线上交流会，不仅仅是学习，更是欢乐的聚会！在这里，你可以唠唠嗑，聊聊COS趣事分享你的作品和心得，结交志同道合的朋友！</span>
+                    </li>
+                    <li class="flex items-start pl-4">
+                        <span class="text-primary mr-2">□</span>
+                        <span>轻松氛围：我们倡导轻松愉快的交流氛围，没有压力，只有快乐！在这里，你可以尽情释放你的二次元热情！</span>
+                    </li>
+                </ul>
+                
+                <div class="text-xs text-gray-400 mt-8">
+                    <div>DESIGN BY TACTICAL EQUIPMENT TEAM</div>
+                    <div>ILLUSTRATION CONCEPT ART</div>
+                </div>
+            </div>
+            
+            <!-- 右侧内容区 -->
+            <div class="lg:col-span-7 flex flex-col">
+                <!-- 人物图片和PERLICA标题 -->
+                <div class="relative mb-8 overflow-hidden rounded shadow-lg">
+                    <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/e7b0e421d3e24e6baf95edfd52f8748c.jpg~tplv-a9rns2rl98-24:720:720.image?rcl=20251015234329B2ED504F4E124A6AA392&rk3s=8e244e95&rrcfp=8a172a1a&x-expires=1761147809&x-signature=xCs35xEpESYZDoghtKpjcOTab6U%3D" 
+                         alt="二次元角色形象" 
+                         class="w-full h-auto object-cover grayscale">
+                    <div class="absolute top-4 right-4 bg-primary text-black px-3 py-1 text-sm font-bold">PERLICA</div>
+                    <div class="absolute top-4 left-4 text-xs text-gray-500">// MEMBER OF TACTICAL SQUAD</div>
+                </div>
+                
+                <!-- 黄色装饰条和标题 -->
+                <div class="bg-primary p-4 mb-6 inline-block self-start">
+                    <div class="text-xs text-gray-600 mb-1">// PERLICA PRESENTS</div>
+                    <h3 class="text-2xl font-bold">道具的闲聊茶会</h3>
+                </div>
+                
+                <!-- 黑色文本块 -->
+                <div class="bg-secondary text-white p-6 shadow-xl self-end rotate-slight-reverse draggable-block" id="blackBlock">
+                    <p class="mb-3">在这里，你会学到道具制作的技巧，提升你的动手能力</p>
+                    <p class="mb-3">让我们一起，用双手创造属于我们的二次元世界！</p>
+                    <p class="mb-3">亲手制作出属于自己的COS道具，让你的COS之路更加闪耀</p>
+                    <p>结识一群热爱二次元的小伙伴，一起分享快乐</p>
+                </div>
+                
+                <!-- 底部ARKNIGHTS ENDFIELD标志 -->
+                <div class="mt-auto text-right">
+                    <div class="text-gray-500 text-sm mb-1">STRATEGY & TACTICS</div>
+                    <div class="text-2xl font-bold">ARKNIGHTS</div>
+                    <div class="text-3xl font-black">ENDFIELD</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部装饰元素 -->
+        <div class="flex justify-between items-center mt-20">
+            <div class="h-px w-1/3 bg-gray-300"></div>
+            <div class="text-4xl text-gray-300">
+                <i class="fa fa-angle-left"></i>
+            </div>
+        </div>
+        
+        <!-- 底部细线条 -->
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-primary to-transparent mt-8"></div>
+    </div>
+
+    <script>
+        // 实现可拖动文本块功能
+        document.addEventListener('DOMContentLoaded', () => {
+            const draggableBlocks = document.querySelectorAll('.draggable-block');
+            const minMove = 15;
+            const maxMove = 50;
+            
+            draggableBlocks.forEach(block => {
+                let isDragging = false;
+                let startY;
+                let initialTop;
+                let currentTop = 0;
+                
+                // 记录初始位置
+                const style = window.getComputedStyle(block);
+                const matrix = new DOMMatrixReadOnly(style.transform);
+                initialTop = matrix.m42; // 获取transform中的Y偏移量
+                
+                // 鼠标按下事件
+                block.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startY = e.clientY;
+                    block.style.transition = 'none'; // 拖动时禁用过渡效果
+                    block.style.cursor = 'grabbing';
+                });
+                
+                // 鼠标移动事件
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const diffY = e.clientY - startY;
+                    // 限制移动范围在-50到50像素之间
+                    currentTop = Math.max(-maxMove, Math.min(diffY, maxMove));
+                    
+                    // 确保至少移动了最小距离或在最小距离范围内
+                    if (Math.abs(currentTop) >= minMove || Math.abs(diffY) < minMove) {
+                        block.style.transform = `translateY(${currentTop}px) ${block.classList.contains('rotate-slight') ? 'rotate(-1deg)' : 'rotate(1deg)'}`;
+                    }
+                });
+                
+                // 鼠标释放事件
+                document.addEventListener('mouseup', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        block.style.cursor = 'grab';
+                        block.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)'; // 平滑复位
+                        // 恢复到初始位置
+                        block.style.transform = block.classList.contains('rotate-slight') ? 'rotate(-1deg)' : 'rotate(1deg)';
+                    }
+                });
+                
+                // 触摸设备支持
+                block.addEventListener('touchstart', (e) => {
+                    isDragging = true;
+                    startY = e.touches[0].clientY;
+                    block.style.transition = 'none';
+                });
+                
+                document.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault(); // 防止页面滚动
+                    
+                    const diffY = e.touches[0].clientY - startY;
+                    currentTop = Math.max(-maxMove, Math.min(diffY, maxMove));
+                    
+                    if (Math.abs(currentTop) >= minMove || Math.abs(diffY) < minMove) {
+                        block.style.transform = `translateY(${currentTop}px) ${block.classList.contains('rotate-slight') ? 'rotate(-1deg)' : 'rotate(1deg)'}`;
+                    }
+                });
+                
+                document.addEventListener('touchend', () => {
+                    if (isDragging) {
+                        isDragging = false;
+                        block.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                        block.style.transform = block.classList.contains('rotate-slight') ? 'rotate(-1deg)' : 'rotate(1deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
